@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI for Networking | Prompt Reference Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #1a5f5e;
+    --teal-light: #2a7d7c;
+    --teal-pale: #e8f4f3;
+    --gold: #c8963c;
+    --gold-light: #f0d9b3;
+    --cream: #faf8f3;
+    --charcoal: #2c2c2c;
+    --mid: #5a5a5a;
+    --light: #9a9a9a;
+    --white: #ffffff;
+    --border: #ddd8d0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    line-height: 1.6;
+  }
+
+  .header {
+    background: var(--teal);
+    color: var(--white);
+    padding: 48px 24px 40px;
+    text-align: center;
+  }
+
+  .org-name {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 16px;
+  }
+
+  .header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(28px, 6vw, 44px);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+
+  .header h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .header p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.8);
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  .intro-note {
+    background: var(--teal-pale);
+    border-left: 4px solid var(--teal);
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    margin-bottom: 40px;
+    font-size: 15px;
+    color: var(--teal);
+  }
+
+  .intro-note strong {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .section {
+    margin-bottom: 48px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .section-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--teal);
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+
+  .section-tag.hunter {
+    background: var(--gold);
+  }
+
+  .section-tag.uncover {
+    background: var(--mid);
+  }
+
+  .section-tag.feed {
+    background: #4a7a79;
+  }
+
+  .section h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(22px, 4vw, 30px);
+    font-weight: 400;
+    color: var(--teal);
+    margin-bottom: 6px;
+  }
+
+  .section-desc {
+    font-size: 15px;
+    color: var(--mid);
+    margin-bottom: 24px;
+  }
+
+  .subsection {
+    margin-bottom: 32px;
+  }
+
+  .subsection h3 {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--light);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .prompt-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+
+  .prompt-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mid);
+    padding: 10px 16px 0;
+  }
+
+  .prompt-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--charcoal);
+    padding: 8px 16px 14px;
+  }
+
+  .prompt-text .placeholder {
+    font-style: italic;
+    color: var(--teal-light);
+  }
+
+  .prompt-footer {
+    background: var(--teal-pale);
+    padding: 10px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .prompt-hint {
+    font-size: 13px;
+    color: var(--teal);
+  }
+
+  .copy-btn {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--teal);
+    border: none;
+    border-radius: 5px;
+    padding: 7px 14px;
+    cursor: pointer;
+    transition: background 0.15s;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .copy-btn:hover { background: var(--teal-light); }
+  .copy-btn.copied { background: var(--gold); }
+
+  .tip-box {
+    background: var(--gold-light);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: var(--charcoal);
+  }
+
+  .tip-box strong {
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  .divider {
+    border: none;
+    border-top: 2px solid var(--border);
+    margin: 48px 0;
+  }
+
+  .reminder-box {
+    background: var(--charcoal);
+    color: var(--white);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin-bottom: 48px;
+  }
+
+  .reminder-box h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 12px;
+    color: var(--gold-light);
+  }
+
+  .reminder-box ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .reminder-box ul li {
+    padding: 6px 0;
+    padding-left: 20px;
+    position: relative;
+    font-size: 15px;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .reminder-box ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+  }
+
+  footer {
+    text-align: center;
+    padding: 32px 24px;
+    font-size: 13px;
+    color: var(--light);
+    border-top: 1px solid var(--border);
+  }
+
+  footer a {
+    color: var(--teal);
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="org-name">DFS Oregon</div>
+  <h1>AI for <em>Networking</em></h1>
+  <p>Your prompt reference guide — copy and paste these directly into your AI tool.</p>
+</div>
+
+<div class="main">
+
+  <div class="intro-note">
+    <strong>How to use this page</strong>
+    Each prompt below is ready to copy. Replace anything in <em>[ brackets ]</em> with your own information, then paste it into Claude, ChatGPT, Gemini, or Perplexity.
+  </div>
+
+  <!-- UNCOVER CONNECTIONS -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag uncover">Step 1</span>
+    </div>
+    <h2>Uncover Connections</h2>
+    <p class="section-desc">Find out who you should be talking to. Goal: a list of at least 25 people to connect with.</p>
+
+    <div class="subsection">
+      <h3>Start with groups you belong to</h3>
+
+      <div class="prompt-card">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="p1">
+          Here are groups I'm part of. What types of people in these groups are most likely to be connected to <span class="placeholder">[your target — e.g. hiring managers in healthcare, small business owners, HR professionals]</span>?<br><br>
+          <span class="placeholder">[Paste your list of groups — church, volunteer org, sports club, professional group, parent group, hobby group, etc.]</span>
+        </div>
+        <div class="prompt-footer">
+          <span class="prompt-hint">Then follow up: "Which of these groups should I prioritize, and why?"</span>
+          <button class="copy-btn" onclick="copyPrompt('Here are groups I\'m part of. What types of people in these groups are most likely to be connected to [your target]?\n\n[Paste your list of groups]', this)">Copy</button>
+        </div>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-label">Prompt — using your work history</div>
+        <div class="prompt-text">
+          Here are companies I've worked at. What types of people from these workplaces are most likely to be connected to <span class="placeholder">[your target]</span>?<br><br>
+          <span class="placeholder">[Paste your list of companies or employers]</span>
+        </div>
+        <div class="prompt-footer">
+          <span class="prompt-hint">Former colleagues are often your warmest leads.</span>
+          <button class="copy-btn" onclick="copyPrompt('Here are companies I\'ve worked at. What types of people from these workplaces are most likely to be connected to [your target]?\n\n[Paste your list of companies or employers]', this)">Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Then find specific names</h3>
+      <div class="tip-box">
+        <strong>How to do it:</strong> Go to the websites and LinkedIn pages for each group. List the names of people you already know first. Then look for names you don't recognize — board members, event organizers, committee chairs — and add them too.
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- FEED CURATION -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag feed">Step 2</span>
+    </div>
+    <h2>Feed Curation</h2>
+    <p class="section-desc">Turn your LinkedIn feed into a focused professional tool. Goal: 25–49 people you're actively paying close attention to.</p>
+
+    <div class="subsection">
+      <h3>Find who to unfollow</h3>
+      <div class="tip-box">
+        <strong>Remember:</strong> Unfollowing is NOT disconnecting. You stay connected and can still message them — their posts just stop appearing in your feed.
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-label">Prompt — paste your feed posts</div>
+        <div class="prompt-text">
+          Here are recent posts from my LinkedIn feed. Based on the content, are there any posters I should unfollow to keep my feed focused on <span class="placeholder">[your industry / target companies / job function]</span>?<br><br>
+          <span class="placeholder">[Paste ~20 posts copied from your LinkedIn feed]</span>
+        </div>
+        <div class="prompt-footer">
+          <span class="prompt-hint">Copy post text directly from LinkedIn — no need to format it.</span>
+          <button class="copy-btn" onclick="copyPrompt('Here are recent posts from my LinkedIn feed. Based on the content, are there any posters I should unfollow to keep my feed focused on [your industry / target companies / job function]?\n\n[Paste ~20 posts copied from your LinkedIn feed]', this)">Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Advanced — if you have 200+ connections</h3>
+
+      <div class="prompt-card">
+        <div class="prompt-label">Prompt — upload your LinkedIn CSV</div>
+        <div class="prompt-text">
+          These are my LinkedIn connections. What patterns do you see?<br><br>
+          <span class="placeholder">[Attach the .csv file you downloaded from LinkedIn]</span>
+        </div>
+        <div class="prompt-footer">
+          <span class="prompt-hint">To download: LinkedIn → Me → Settings → Data Privacy → Get a copy of your data</span>
+          <button class="copy-btn" onclick="copyPrompt('These are my LinkedIn connections. What patterns do you see?\n\n[Attach the .csv file you downloaded from LinkedIn]', this)">Copy</button>
+        </div>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-label">Follow-up prompt</div>
+        <div class="prompt-text">
+          I want to prioritize contacts located in <span class="placeholder">[your region, e.g. the Portland Metro area]</span> who work as <span class="placeholder">[job title]</span> in <span class="placeholder">[industry]</span>. Identify the contacts who do NOT fit these criteria.
+        </div>
+        <div class="prompt-footer">
+          <span class="prompt-hint">Use the output to unfollow low-priority contacts in bulk.</span>
+          <button class="copy-btn" onclick="copyPrompt('I want to prioritize contacts located in [your region] who work as [job title] in [industry]. Identify the contacts who do NOT fit these criteria.', this)">Copy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- GARDEN NETWORKING -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag">Garden Networking</span>
+    </div>
+    <h2>Garden Networking</h2>
+    <p class="section-desc">For when you're not urgently job searching. Do this consistently — daily, weekly, or monthly — to stay visible and build relationships over time.</p>
+
+    <div class="subsection">
+      <h3>Find posts worth commenting on</h3>
+
+      <div class="prompt-card">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text">
+          Of these posts, which ones would be worth commenting on if I want to stay visible to people in <span class="placeholder">[my field / my target industry]</span>? For each one, suggest an angle for a genuinely useful comment.<br><br>
+          <span class="placeholder">[Paste ~20 posts from your LinkedIn feed]</span>
+        </div>
+        <div class="prompt-footer">
+          <span class="prompt-hint">You can reuse the same posts you pasted for Feed Curation.</span>
+          <button class="copy-btn" onclick="copyPrompt('Of these posts, which ones would be worth commenting on if I want to stay visible to people in [my field / my target industry]? For each one, suggest an angle for a genuinely useful comment.\n\n[Paste ~20 posts from your LinkedIn feed]', this)">Copy</button>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <strong>Pro tip for posts with lots of comments:</strong> On a post with hundreds of reactions, your comment may get lost. Try replying to a specific commenter instead — you'll be much more visible to that person. Paste the post AND its comments into AI and ask: "Are any of these comments worth replying to?"
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Draft a comment</h3>
+
+      <div class="prompt-card">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text">
+          Here's a LinkedIn post from <span class="placeholder">[a hiring manager at a company I'd like to work for / a contact I want to stay connected with]</span>. I want to leave a comment that adds value and sounds like me — not generic, not sycophantic. Here's a little about my background: <span class="placeholder">[paste 2–3 sentences about yourself]</span>. Draft two or three options.
+        </div>
+        <div class="prompt-footer">
+          <span class="prompt-hint">Always edit before posting. The goal is for it to sound like you — because in the final version, it is you.</span>
+          <button class="copy-btn" onclick="copyPrompt('Here\'s a LinkedIn post from [a hiring manager at a company I\'d like to work for / a contact I want to stay connected with]. I want to leave a comment that adds value and sounds like me — not generic, not sycophantic. Here\'s a little about my background: [paste 2–3 sentences about yourself]. Draft two or three options.', this)">Copy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- HUNTER NETWORKING -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag hunter">Hunter Networking</span>
+    </div>
+    <h2>Hunter Networking</h2>
+    <p class="section-desc">For when you need a job now. Do this every weekday during a dedicated time block — focused, direct outreach to specific people.</p>
+
+    <div class="subsection">
+      <h3>Find who to reach out to</h3>
+
+      <div class="prompt-card">
+        <div class="prompt-label">Prompt — by job target</div>
+        <div class="prompt-text">
+          I am seeking work as a <span class="placeholder">[job title]</span> in <span class="placeholder">[industry / location]</span>. Based on my background — <span class="placeholder">[paste 3–4 sentences about your experience]</span> — who are the types of people most likely to either refer me directly to a job opening or connect me with someone who can?
+        </div>
+        <div class="prompt-footer">
+          <span class="prompt-hint">This gives you a target profile to search for on LinkedIn.</span>
+          <button class="copy-btn" onclick="copyPrompt('I am seeking work as a [job title] in [industry / location]. Based on my background — [paste 3–4 sentences about your experience] — who are the types of people most likely to either refer me directly to a job opening or connect me with someone who can?', this)">Copy</button>
+        </div>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-label">Prompt — using your existing contacts</div>
+        <div class="prompt-text">
+          Here are people in my network: <span class="placeholder">[paste list of names and job titles]</span>. Which of them are most likely to know about openings for someone with my background, and which are most likely to know someone who does?
+        </div>
+        <div class="prompt-footer">
+          <span class="prompt-hint">A simple name + job title list is enough — no other details needed.</span>
+          <button class="copy-btn" onclick="copyPrompt('Here are people in my network: [paste list of names and job titles]. Which of them are most likely to know about openings for someone with my background, and which are most likely to know someone who does?', this)">Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Research a contact before reaching out</h3>
+
+      <div class="prompt-card">
+        <div class="prompt-label">Prompt — LinkedIn profile research</div>
+        <div class="prompt-text">
+          Here is the LinkedIn profile of someone I want to reach out to: <span class="placeholder">[paste their profile text]</span>. What do we have in common, and what's the most genuine connection point I could reference in a message?
+        </div>
+        <div class="prompt-footer">
+          <span class="prompt-hint">On LinkedIn, click "More" on someone's profile → "Copy LinkedIn URL" then copy their page text.</span>
+          <button class="copy-btn" onclick="copyPrompt('Here is the LinkedIn profile of someone I want to reach out to: [paste their profile text]. What do we have in common, and what\'s the most genuine connection point I could reference in a message?', this)">Copy</button>
+        </div>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-label">Prompt — reconnecting after a gap</div>
+        <div class="prompt-text">
+          Here is what I know about <span class="placeholder">[name]</span>: <span class="placeholder">[paste what you know about them]</span>. I want to reconnect after <span class="placeholder">[timeframe, e.g. two years]</span>. What's a natural, non-transactional reason to reach out right now?
+        </div>
+        <div class="prompt-footer">
+          <span class="prompt-hint">Natural reconnection feels like interest in them — not a request.</span>
+          <button class="copy-btn" onclick="copyPrompt('Here is what I know about [name]: [paste what you know about them]. I want to reconnect after [timeframe]. What\'s a natural, non-transactional reason to reach out right now?', this)">Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Draft outreach messages</h3>
+
+      <div class="prompt-card">
+        <div class="prompt-label">Prompt — LinkedIn DM</div>
+        <div class="prompt-text">
+          I want to send a LinkedIn DM to <span class="placeholder">[name / job title]</span> asking if they know of any openings for someone with my background. I don't want it to sound desperate or transactional. Here's my background: <span class="placeholder">[paste]</span>. Draft two options — one warmer, one more direct.
+        </div>
+        <div class="prompt-footer">
+          <span class="prompt-hint">Pick the option that sounds most like you, then edit before sending.</span>
+          <button class="copy-btn" onclick="copyPrompt('I want to send a LinkedIn DM to [name / job title] asking if they know of any openings for someone with my background. I don\'t want it to sound desperate or transactional. Here\'s my background: [paste]. Draft two options — one warmer, one more direct.', this)">Copy</button>
+        </div>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-label">Prompt — warm intro follow-up email</div>
+        <div class="prompt-text">
+          I've been referred to <span class="placeholder">[name]</span> by <span class="placeholder">[mutual contact]</span>. Draft a short email introducing myself and asking for a 20-minute call. Here's my background: <span class="placeholder">[paste]</span>. Here's what I know about them: <span class="placeholder">[paste]</span>.
+        </div>
+        <div class="prompt-footer">
+          <span class="prompt-hint">Mention the mutual contact in the first sentence — it's your best credibility signal.</span>
+          <button class="copy-btn" onclick="copyPrompt('I\'ve been referred to [name] by [mutual contact]. Draft a short email introducing myself and asking for a 20-minute call. Here\'s my background: [paste]. Here\'s what I know about them: [paste].', this)">Copy</button>
+        </div>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-label">Prompt — asking for a warm introduction</div>
+        <div class="prompt-text">
+          I want to ask <span class="placeholder">[name]</span> to introduce me to <span class="placeholder">[target contact]</span>. We know each other from <span class="placeholder">[context]</span>. Draft a short, easy-to-forward message that makes it simple for them to say yes.
+        </div>
+        <div class="prompt-footer">
+          <span class="prompt-hint">Make it easy — include a one-sentence description of yourself they can use in the intro.</span>
+          <button class="copy-btn" onclick="copyPrompt('I want to ask [name] to introduce me to [target contact]. We know each other from [context]. Draft a short, easy-to-forward message that makes it simple for them to say yes.', this)">Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>When you're not hearing back</h3>
+
+      <div class="prompt-card">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text">
+          I've reached out to <span class="placeholder">[number]</span> people in the past <span class="placeholder">[timeframe]</span> and haven't heard back. Here's an example of a message I've been sending: <span class="placeholder">[paste]</span>. What might not be working, and how would you rewrite it?
+        </div>
+        <div class="prompt-footer">
+          <span class="prompt-hint">Not hearing back is feedback. Use AI to diagnose before sending more.</span>
+          <button class="copy-btn" onclick="copyPrompt('I\'ve reached out to [number] people in the past [timeframe] and haven\'t heard back. Here\'s an example of a message I\'ve been sending: [paste]. What might not be working, and how would you rewrite it?', this)">Copy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REMINDER BOX -->
+  <div class="reminder-box">
+    <h3>Always give AI your context</h3>
+    <ul>
+      <li>Your background — a few sentences about your experience and what you're looking for</li>
+      <li>Your target — the type of person, company, or role you're focused on</li>
+      <li>Your relationship — how you know (or don't know) the person you're reaching out to</li>
+    </ul>
+    <p style="margin-top: 14px; font-size: 14px; color: rgba(255,255,255,0.6);">Generic input produces generic output. The more specific you are, the more useful the draft.</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>Prepared for DFS Oregon by <strong>Elie Jacobsen</strong> &nbsp;·&nbsp; Questions? Contact <a href="mailto:Han-BeeK@dressforsuccessoregon.org">Han-Bee Kim</a></p>
+</footer>
+
+<script>
+function copyPrompt(text, btn) {
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = 'Copy';
+      btn.classList.remove('copied');
+    }, 2000);
+  }).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = 'Copy';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+</script>
+
+</body>
+</html>
