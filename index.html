@@ -7,13 +7,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy:    #063c53;
-    --mid:     #3d6a7d;
-    --steel:   #9eaeb3;
-    --pale:    #d8e0e2;
-    --cream:   #fcf7ee;
-    --coral:   #f47c6d;
-    --white:   #ffffff;
+    --navy:   #063c53;
+    --mid:    #3d6a7d;
+    --steel:  #9eaeb3;
+    --pale:   #d8e0e2;
+    --cream:  #fcf7ee;
+    --coral:  #f47c6d;
+    --white:  #ffffff;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -23,7 +23,7 @@
     background: var(--cream);
     color: var(--navy);
     line-height: 1.65;
-    font-size: 16px;
+    font-size: 17px;
   }
 
   /* ── HEADER ── */
@@ -31,8 +31,6 @@
     background: var(--navy);
     color: var(--white);
     padding: 64px 40px 56px;
-    text-align: left;
-    max-width: 100%;
   }
 
   .site-header .inner {
@@ -46,99 +44,215 @@
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--steel);
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
 
   .site-header h1 {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
-    font-size: clamp(36px, 7vw, 60px);
-    line-height: 1.1;
+    font-size: clamp(40px, 7vw, 64px);
+    line-height: 1.05;
     color: var(--white);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
 
   .site-header .subtitle {
     font-family: 'Source Sans 3', sans-serif;
     font-weight: 600;
-    font-size: clamp(14px, 2.5vw, 18px);
+    font-size: clamp(15px, 2.5vw, 19px);
     color: var(--steel);
-    letter-spacing: 0.03em;
-    margin-bottom: 24px;
+    letter-spacing: 0.04em;
+    margin-bottom: 28px;
   }
 
   .site-header .intro {
     font-size: 16px;
-    color: rgba(255,255,255,0.7);
+    color: rgba(255,255,255,0.65);
     font-weight: 300;
     max-width: 520px;
     line-height: 1.7;
   }
 
-  /* ── MAIN ── */
+  /* ── SECTION DIVIDERS ── */
+  .workshop-section {
+    border-top: 3px solid var(--coral);
+    margin-top: 0;
+  }
+
+  .workshop-section-header {
+    background: var(--pale);
+    padding: 36px 40px 32px;
+  }
+
+  .workshop-section-header .inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .workshop-section-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: clamp(30px, 5vw, 46px);
+    color: var(--navy);
+    line-height: 1.1;
+  }
+
+  .workshop-section-header p {
+    font-size: 15px;
+    color: var(--mid);
+    font-weight: 300;
+    margin-top: 8px;
+    max-width: 560px;
+  }
+
+  /* ── MAIN CONTENT ── */
   .main {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 40px 80px;
   }
 
-  /* ── SECTION BAND ── */
-  .section {
-    padding: 56px 0 16px;
+  /* ── STEP ── */
+  .step {
+    padding: 48px 0 8px;
     border-bottom: 1px solid var(--pale);
   }
 
-  .section:last-of-type {
-    border-bottom: none;
-  }
+  .step:last-of-type { border-bottom: none; }
 
-  .section-label {
+  .step-label {
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--coral);
+    margin-bottom: 8px;
+  }
+
+  .step h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: clamp(24px, 4vw, 36px);
+    color: var(--navy);
+    line-height: 1.15;
     margin-bottom: 10px;
   }
 
-  .section h2 {
-    font-family: 'Cormorant Garamond', serif;
+  .step-goal {
+    font-size: 13px;
     font-weight: 600;
-    font-size: clamp(26px, 4vw, 38px);
-    color: var(--navy);
-    line-height: 1.15;
-    margin-bottom: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 16px;
   }
 
-  .section-intro {
-    font-size: 15px;
+  .step-intro {
+    font-size: 16px;
     color: var(--mid);
     font-weight: 300;
-    max-width: 580px;
-    margin-bottom: 36px;
+    max-width: 600px;
+    margin-bottom: 28px;
     line-height: 1.7;
   }
 
   /* ── SUBSECTION ── */
   .subsection {
-    margin-bottom: 40px;
+    margin-bottom: 36px;
   }
 
-  .subsection h3 {
-    font-family: 'Source Sans 3', sans-serif;
+  .subsection h4 {
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--steel);
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+    margin-top: 28px;
     padding-bottom: 8px;
     border-bottom: 1px solid var(--pale);
   }
 
+  /* ── KNOWLEDGE BLOCKS ── */
+  .kb-list {
+    list-style: none;
+    margin: 0 0 24px;
+  }
+
+  .kb-list li {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--pale);
+    font-size: 16px;
+    color: var(--navy);
+    line-height: 1.55;
+  }
+
+  .kb-list li:first-child { border-top: 1px solid var(--pale); }
+
+  .kb-title {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .kb-desc {
+    font-weight: 300;
+    color: var(--mid);
+    font-size: 15px;
+  }
+
+  /* Sub-checklist inside Employment narrative */
+  .kb-checklist {
+    list-style: none;
+    margin: 10px 0 4px 2px;
+  }
+
+  .kb-checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 5px 0;
+    border-bottom: none;
+    font-size: 14px;
+    color: var(--mid);
+    font-weight: 300;
+  }
+
+  .kb-checklist li:first-child { border-top: none; }
+
+  .check-icon {
+    flex-shrink: 0;
+    width: 14px; height: 14px;
+    margin-top: 3px;
+    color: var(--coral);
+  }
+
+  /* ── AI TOOL GRID ── */
+  .ai-tools {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin: 20px 0 24px;
+    background: var(--pale);
+  }
+
+  .ai-card {
+    display: block;
+    background: var(--cream);
+    padding: 18px 20px;
+    text-decoration: none;
+    color: var(--navy);
+    transition: background 0.15s;
+  }
+
+  .ai-card:hover { background: var(--white); }
+  .ai-card-name { font-weight: 600; font-size: 16px; margin-bottom: 2px; }
+  .ai-card-url { font-size: 12px; color: var(--coral); margin-bottom: 6px; }
+  .ai-card-note { font-size: 13px; color: var(--mid); font-weight: 300; line-height: 1.4; }
+
   /* ── PROMPT BLOCK ── */
   .prompt-block {
-    margin-bottom: 28px;
+    margin-bottom: 20px;
     padding-left: 20px;
     border-left: 2px solid var(--pale);
   }
@@ -157,9 +271,7 @@
     margin-bottom: 6px;
   }
 
-  .prompt-tag.followup-tag {
-    color: var(--coral);
-  }
+  .prompt-tag.followup-tag { color: var(--coral); }
 
   .prompt-text {
     font-size: 16px;
@@ -174,14 +286,35 @@
     font-weight: 300;
     color: var(--mid);
     line-height: 1.6;
+    margin-bottom: 8px;
   }
+
+  /* ── COPY BUTTON ── */
+  .copy-btn {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--navy);
+    border: none;
+    border-radius: 3px;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: background 0.15s;
+    margin-top: 4px;
+  }
+
+  .copy-btn:hover { background: var(--mid); }
+  .copy-btn.copied { background: var(--coral); }
 
   /* ── CALLOUT ── */
   .callout {
     background: var(--pale);
-    padding: 18px 22px;
-    margin: 20px 0 28px;
-    font-size: 14px;
+    padding: 16px 20px;
+    margin: 16px 0 24px;
+    font-size: 15px;
     color: var(--navy);
     line-height: 1.65;
   }
@@ -192,86 +325,17 @@
     margin-bottom: 4px;
   }
 
-  .gold-callout {
-    background: transparent;
+  .coral-callout {
     border-left: 3px solid var(--coral);
     padding: 14px 20px;
-    margin: 20px 0 28px;
-    font-size: 14px;
+    margin: 16px 0 24px;
+    font-size: 15px;
     color: var(--mid);
     line-height: 1.65;
-  }
-
-  .gold-callout strong {
-    color: var(--navy);
-    font-weight: 600;
-  }
-
-  /* ── AI TOOL GRID ── */
-  .ai-tools {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-    margin: 20px 0 28px;
-    background: var(--pale);
-  }
-
-  .ai-card {
-    display: block;
-    background: var(--cream);
-    padding: 18px 20px;
-    text-decoration: none;
-    color: var(--navy);
-    transition: background 0.15s;
-  }
-
-  .ai-card:hover { background: var(--white); }
-
-  .ai-card-name {
-    font-weight: 600;
-    font-size: 15px;
-    color: var(--navy);
-    margin-bottom: 2px;
-  }
-
-  .ai-card-url {
-    font-size: 12px;
-    color: var(--coral);
-    margin-bottom: 6px;
-  }
-
-  .ai-card-note {
-    font-size: 13px;
-    color: var(--mid);
     font-weight: 300;
-    line-height: 1.4;
   }
 
-  /* ── CHECKLIST ── */
-  .checklist {
-    list-style: none;
-    margin: 16px 0 24px;
-  }
-
-  .checklist li {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--pale);
-    font-size: 15px;
-    color: var(--navy);
-    line-height: 1.5;
-  }
-
-  .checklist li:first-child { border-top: 1px solid var(--pale); }
-
-  .check-icon {
-    flex-shrink: 0;
-    width: 16px; height: 16px;
-    margin-top: 3px;
-    color: var(--coral);
-  }
+  .coral-callout strong { color: var(--navy); font-weight: 600; }
 
   /* ── DICTATION ── */
   .dictation-highlight {
@@ -280,18 +344,14 @@
     align-items: flex-start;
     padding: 20px 0;
     border-top: 1px solid var(--pale);
-    margin: 16px 0 24px;
+    margin: 8px 0 24px;
   }
 
-  .mic-icon {
-    flex-shrink: 0;
-    color: var(--coral);
-    margin-top: 2px;
-  }
+  .mic-icon { flex-shrink: 0; color: var(--coral); margin-top: 2px; }
 
   .dictation-text strong {
     display: block;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 600;
     color: var(--navy);
     margin-bottom: 4px;
@@ -304,6 +364,48 @@
     line-height: 1.6;
   }
 
+  /* ── BONUS BOX ── */
+  .bonus-box {
+    background: var(--navy);
+    color: var(--white);
+    padding: 28px 32px;
+    margin: 32px 0 20px;
+  }
+
+  .bonus-box .bonus-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--steel);
+    margin-bottom: 12px;
+  }
+
+  .bonus-box h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--white);
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+
+  .bonus-box .prompt-block {
+    border-left-color: rgba(255,255,255,0.2);
+  }
+
+  .bonus-box .prompt-tag { color: var(--steel); }
+  .bonus-box .prompt-text { color: var(--white); font-size: 15px; }
+  .bonus-box .prompt-note { color: rgba(255,255,255,0.6); }
+
+  .bonus-box .copy-btn {
+    background: rgba(255,255,255,0.15);
+    color: var(--white);
+  }
+
+  .bonus-box .copy-btn:hover { background: rgba(255,255,255,0.25); }
+  .bonus-box .copy-btn.copied { background: var(--coral); }
+
   /* ── ABOUT BAND ── */
   .about-band {
     background: var(--navy);
@@ -312,10 +414,7 @@
     margin-top: 56px;
   }
 
-  .about-band .inner {
-    max-width: 800px;
-    margin: 0 auto;
-  }
+  .about-band .inner { max-width: 800px; margin: 0 auto; }
 
   .about-band .label {
     font-size: 11px;
@@ -337,17 +436,14 @@
 
   .about-band p {
     font-size: 16px;
-    color: rgba(255,255,255,0.75);
+    color: rgba(255,255,255,0.7);
     font-weight: 300;
     max-width: 560px;
     line-height: 1.7;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
 
-  .about-band a {
-    color: var(--coral);
-    text-decoration: none;
-  }
+  .about-band a { color: var(--coral); text-decoration: none; }
 
   /* ── FOOTER ── */
   footer {
@@ -360,17 +456,19 @@
 
   footer a { color: var(--mid); text-decoration: none; }
 
-  @media (max-width: 560px) {
-    .main { padding: 0 24px 60px; }
-    .site-header { padding: 48px 24px 40px; }
+  @media (max-width: 600px) {
+    .main, .site-header, .workshop-section-header { padding-left: 24px; padding-right: 24px; }
     .ai-tools { grid-template-columns: 1fr; }
     .about-band { padding: 48px 24px; }
+    .prompt-block.followup { margin-left: 12px; }
   }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
+<!-- ══════════════════════════════════════════
+     HEADER
+══════════════════════════════════════════ -->
 <header class="site-header">
   <div class="inner">
     <div class="org-name">DFS Oregon</div>
@@ -380,233 +478,357 @@
   </div>
 </header>
 
-<div class="main">
-
-  <!-- GET STARTED -->
-  <div class="section" id="get-started">
-    <div class="section-label">Step 1</div>
-    <h2>Create a free AI account</h2>
-    <p class="section-intro">Sign up for any one of these — they're all free and work great for job searching. If you already have an account with any of them, you're all set.</p>
-
-    <div class="ai-tools">
-      <a class="ai-card" href="https://claude.ai" target="_blank" rel="noopener">
-        <div class="ai-card-name">Claude</div>
-        <div class="ai-card-url">claude.ai</div>
-        <div class="ai-card-note">Great for longer writing and thoughtful responses</div>
-      </a>
-      <a class="ai-card" href="https://chatgpt.com" target="_blank" rel="noopener">
-        <div class="ai-card-name">ChatGPT</div>
-        <div class="ai-card-url">chatgpt.com</div>
-        <div class="ai-card-note">The most widely used — familiar to many employers</div>
-      </a>
-      <a class="ai-card" href="https://gemini.google.com" target="_blank" rel="noopener">
-        <div class="ai-card-name">Gemini</div>
-        <div class="ai-card-url">gemini.google.com</div>
-        <div class="ai-card-note">Works seamlessly with Google Docs &amp; Gmail</div>
-      </a>
-      <a class="ai-card" href="https://perplexity.ai" target="_blank" rel="noopener">
-        <div class="ai-card-name">Perplexity</div>
-        <div class="ai-card-url">perplexity.ai</div>
-        <div class="ai-card-note">Good for researching companies and job types</div>
-      </a>
-    </div>
-
-    <div class="callout">
-      <strong>Not sure which one to pick?</strong>
-      Any of them will work for what we're doing. Pick whichever name you recognize, or just go with Claude or ChatGPT.
+<!-- ══════════════════════════════════════════
+     H2: AI FOR JOB SEARCH
+══════════════════════════════════════════ -->
+<div class="workshop-section">
+  <div class="workshop-section-header">
+    <div class="inner">
+      <h2>AI for Job Search</h2>
+      <p>A step-by-step guide to using AI throughout your job search — from building your documents to landing the interview.</p>
     </div>
   </div>
 
-  <!-- YOUR STORY -->
-  <div class="section" id="your-story">
-    <div class="section-label">Step 2</div>
-    <h2>Write your work story</h2>
-    <p class="section-intro">Open any document — Google Doc, Word, Notes app, whatever's easiest — and write a plain-language story about your work experience. This doesn't need to be polished or formal. Write it the way you'd tell a friend.</p>
+  <div class="main">
 
-    <ul class="checklist">
-      <li>
-        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-        Jobs you've had — paid, unpaid, volunteer, caregiving, anything counts
-      </li>
-      <li>
-        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-        What you actually did in each role
-      </li>
-      <li>
-        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-        What you liked about those jobs
-      </li>
-      <li>
-        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-        What you didn't like or wouldn't want to do again
-      </li>
-      <li>
-        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-        Any skills or strengths you feel good about — even if you've never been paid for them
-      </li>
-    </ul>
+    <!-- STEP 1 -->
+    <div class="step" id="step-1">
+      <div class="step-label">Step 1</div>
+      <h3>Set up your job search library</h3>
+      <div class="step-goal">Goal: A library of documents you can quickly reference during your job search</div>
+      <p class="step-intro">The more context you give an AI tool about yourself, the more useful its answers will be. Building a small library of documents you can paste from saves you time in every future conversation.</p>
+      <p class="step-intro">Open any word processing application — Google Docs, MS Word, Notes app, whatever's easiest — and write a few plain-language documents about your work experience. We'll call these "knowledge blocks".</p>
 
-    <div class="dictation-highlight">
-      <div class="mic-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
-          <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
-          <line x1="12" y1="19" x2="12" y2="23"/>
-          <line x1="8" y1="23" x2="16" y2="23"/>
-        </svg>
+      <div class="dictation-highlight">
+        <div class="mic-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+            <line x1="12" y1="19" x2="12" y2="23"/>
+            <line x1="8" y1="23" x2="16" y2="23"/>
+          </svg>
+        </div>
+        <div class="dictation-text">
+          <strong>Don't love writing? Try talking instead.</strong>
+          <p><a href="https://dictation.io" target="_blank" rel="noopener" style="color:var(--coral); font-weight:600;">Dictation.io</a> lets you speak and it types your words in real time — no account, no download. Works in Spanish and many other languages. AI tools can read and respond in any language.</p>
+        </div>
       </div>
-      <div class="dictation-text">
-        <strong>Don't love writing? Try talking instead.</strong>
-        <p><a href="https://dictation.io" target="_blank" rel="noopener" style="color:var(--coral); font-weight:600;">Dictation.io</a> lets you speak and it types your words in real time — no account, no download. Works in Spanish and many other languages. AI tools can read and respond in any language.</p>
-      </div>
-    </div>
 
-    <div class="gold-callout">
-      Once your story is written, <strong>save it somewhere easy to find.</strong> You'll copy and paste it into your AI tool to get started.
-    </div>
-  </div>
+      <p class="step-intro">Create a separate document for each knowledge block:</p>
 
-  <!-- CLARIFY -->
-  <div class="section" id="clarify">
-    <div class="section-label">Prompts</div>
-    <h2>Clarify your ideal job target</h2>
-    <p class="section-intro">Start here. Use your work story to discover the job titles, industries, and companies that fit who you are.</p>
+      <ul class="kb-list">
+        <li>
+          <span class="kb-title">Employment narrative</span>
+          <span class="kb-desc">A lifelong story about your work experience — paid and unpaid, what you liked and disliked, what others praised you for. This doesn't need to be polished or formal. Write it the way you'd tell a friend.</span>
+          <ul class="kb-checklist">
+            <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Jobs you've had — paid, unpaid, volunteer, caregiving, anything counts</li>
+            <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>What you actually did in each role</li>
+            <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>What you liked about those jobs</li>
+            <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>What you didn't like or wouldn't want to do again</li>
+            <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Any skills or strengths you feel good about — even if you've never been paid for them</li>
+          </ul>
+        </li>
+        <li>
+          <span class="kb-title">Paid employment chronology</span>
+          <span class="kb-desc">Companies, titles, dates, and a short job description for each role.</span>
+        </li>
+        <li>
+          <span class="kb-title">Unpaid employment chronology</span>
+          <span class="kb-desc">Activity, dates, and key responsibilities — this might include caregiving, volunteering, community work, or other unpaid contributions.</span>
+        </li>
+        <li>
+          <span class="kb-title">References</span>
+          <span class="kb-desc">Names, titles, relationship, contact info, and a sentence on what each reference is likely to say. Useful both for job applications and for prompting AI to help draft reference request messages.</span>
+        </li>
+        <li>
+          <span class="kb-title">Accomplishments list</span>
+          <span class="kb-desc">Distinct from the employment chronology — specific things you did that had a measurable or notable outcome: "trained three new hires," "reduced customer wait time," "organized the annual fundraiser that brought in $X." These are the raw material for strong resume bullets and interview answers, and they're hard to reconstruct under pressure.</span>
+        </li>
+        <li>
+          <span class="kb-title">Voice and tone</span>
+          <span class="kb-desc">Find any original writing you've done that sounds like you — maybe an email, a blog post, or a social media post — and put it in this document. If there are words you dislike using (for example, if you don't like business jargon, add that here). The more AI knows about your writing preferences, the more any messages it drafts on your behalf will sound like you and not a generic robot.</span>
+        </li>
+      </ul>
 
-    <div class="prompt-block">
-      <div class="prompt-tag">Start here</div>
-      <div class="prompt-text">"Here's what I've done. Help me spot skills and strengths — look for patterns that show up across multiple roles, including unpaid and informal work."</div>
-      <div class="prompt-note">Paste or attach your work story document.</div>
-    </div>
-
-    <div class="prompt-block followup">
-      <div class="prompt-tag followup-tag">Follow-up</div>
-      <div class="prompt-text">"What are some job titles that fit my skills and strengths? Give me a list of 5–8 job titles with a one-sentence explanation of why each fits."</div>
-    </div>
-
-    <div class="prompt-block followup">
-      <div class="prompt-tag followup-tag">Follow-up</div>
-      <div class="prompt-text">"Which industries need people with those job titles? List the top 5 industries, ranked by how many job openings typically exist."</div>
-    </div>
-
-    <div class="prompt-block followup">
-      <div class="prompt-tag followup-tag">Follow-up</div>
-      <div class="prompt-text">"What types of companies hire people with those job titles? Give me 3–5 specific types of companies, with one example of a real company for each type."</div>
-    </div>
-
-    <div class="prompt-block followup">
-      <div class="prompt-tag followup-tag">Follow-up</div>
-      <div class="prompt-text">"Based on the job titles and industries we just identified, which of them are most likely to remain in demand as AI takes over more tasks? For each one, tell me specifically why — what does this role involve that AI handles poorly or not at all?"</div>
-    </div>
-  </div>
-
-  <!-- DOCUMENTS -->
-  <div class="section" id="documents">
-    <div class="section-label">Prompts</div>
-    <h2>Set up your job search documents</h2>
-    <p class="section-intro">The more context you give an AI tool about yourself, the more useful its answers will be. Building a small library of documents you can paste from saves you time in every future conversation.</p>
-
-    <div class="prompt-block">
-      <div class="prompt-tag">Prompt</div>
-      <div class="prompt-text">"I'm starting a job search. List the 5 most useful documents I should create to make it easier to use AI tools throughout my search. For each one, tell me what to include and why it helps."</div>
-    </div>
-  </div>
-
-  <!-- JOB LISTINGS -->
-  <div class="section" id="listings">
-    <div class="section-label">Prompts</div>
-    <h2>Find, understand, and respond to job listings</h2>
-
-    <div class="subsection">
-      <h3>Finding jobs</h3>
-      <div class="prompt-block">
-        <div class="prompt-tag">Prompt</div>
-        <div class="prompt-text">"What are some keywords I should search for if I am looking for work as a [your ideal job description]? Give me 10–15 keywords or job title variations, grouped by: exact titles, related titles, and industry terms that show up in listings."</div>
+      <div class="coral-callout">
+        Once your documents are written, <strong>save them somewhere easy to find.</strong> You'll copy and paste from them throughout your job search.
       </div>
     </div>
 
-    <div class="subsection">
-      <h3>Understanding a listing</h3>
-      <div class="prompt-block">
-        <div class="prompt-tag">Prompt</div>
-        <div class="prompt-text">"Here's a job listing — can you explain what this role actually does? Give me a plain-English summary in 3–5 sentences, then a short list of the 3 things this job will mostly involve day-to-day."</div>
-        <div class="prompt-note">Paste the full job listing.</div>
-      </div>
-      <div class="prompt-block">
-        <div class="prompt-tag">Prompt</div>
-        <div class="prompt-text">"Does this job sound like a good fit for someone with my background? Be direct. Tell me the 2–3 strongest matches and the 1–2 biggest gaps I'd need to address."</div>
-        <div class="prompt-note">Paste the job listing and your resume.</div>
-      </div>
-    </div>
+    <!-- STEP 2 -->
+    <div class="step" id="step-2">
+      <div class="step-label">Step 2</div>
+      <h3>Create a free AI account</h3>
+      <p class="step-intro">Sign up for any one of these — they're all free and work great for job searching. If you already have an account with any of them, you're all set.</p>
 
-    <div class="subsection">
-      <h3>Tailoring your resume</h3>
-      <div class="prompt-block">
-        <div class="prompt-tag">Prompt</div>
-        <div class="prompt-text">"Here's the job I'm applying for and my resume draft. Can you help make it a better match?"</div>
-        <div class="prompt-note">Paste the job listing and your resume.</div>
+      <div class="ai-tools">
+        <a class="ai-card" href="https://claude.ai" target="_blank" rel="noopener">
+          <div class="ai-card-name">Claude</div>
+          <div class="ai-card-url">claude.ai</div>
+          <div class="ai-card-note">Great for longer writing and thoughtful responses</div>
+        </a>
+        <a class="ai-card" href="https://chatgpt.com" target="_blank" rel="noopener">
+          <div class="ai-card-name">ChatGPT</div>
+          <div class="ai-card-url">chatgpt.com</div>
+          <div class="ai-card-note">The most widely used — familiar to many employers</div>
+        </a>
+        <a class="ai-card" href="https://gemini.google.com" target="_blank" rel="noopener">
+          <div class="ai-card-name">Gemini</div>
+          <div class="ai-card-url">gemini.google.com</div>
+          <div class="ai-card-note">Works directly with Google Docs and Gmail</div>
+        </a>
+        <a class="ai-card" href="https://perplexity.ai" target="_blank" rel="noopener">
+          <div class="ai-card-name">Perplexity</div>
+          <div class="ai-card-url">perplexity.ai</div>
+          <div class="ai-card-note">Good for researching companies and job types</div>
+        </a>
       </div>
-    </div>
 
-    <div class="subsection">
-      <h3>Writing a cover letter</h3>
-      <div class="prompt-block">
-        <div class="prompt-tag">Prompt</div>
-        <div class="prompt-text">"Here's the job I'm applying for and my resume. I've also attached the hiring manager's LinkedIn profile. Draft a cover letter that leads with the business problem this role is probably solving, and positions me as someone who can solve it. Don't open with 'I am writing to apply' or list my credentials in the first paragraph."</div>
-        <div class="prompt-note">Paste the job listing and your resume. Attach the hiring manager's LinkedIn profile as a PDF if you can find it.</div>
-      </div>
-    </div>
-
-    <div class="subsection">
-      <h3>Reaching out directly</h3>
-      <div class="prompt-block">
-        <div class="prompt-tag">Prompt</div>
-        <div class="prompt-text">"I am sending a cold email to the hiring manager for this job. Draft a professional but friendly email message. Keep it under 150 words. Lead with one specific reason I'm reaching out to them in particular."</div>
-        <div class="prompt-note">Paste the job listing, your resume, your cover letter, and the hiring manager's LinkedIn profile.</div>
+      <div class="callout">
+        <strong>Not sure which one to pick?</strong>
+        Any of them will work for what we're doing. Pick whichever name you recognize, or just go with Claude or ChatGPT.
       </div>
     </div>
-  </div>
 
-  <!-- INTERVIEWS -->
-  <div class="section" id="interviews">
-    <div class="section-label">Prompts</div>
-    <h2>Interview prep</h2>
-
-    <div class="prompt-block">
-      <div class="prompt-tag">Prompt</div>
-      <div class="prompt-text">"I got an interview for this job! I'm really nervous. Can you write some interview questions so I can practice? Focus on questions specific to this role and company, not generic interview questions I could find anywhere. Include at least two behavioral questions based on the job requirements."</div>
-      <div class="prompt-note">Paste the job listing, your resume, your cover letter, the hiring manager's LinkedIn profile, and any messages you've exchanged.</div>
-    </div>
-  </div>
-
-  <!-- NETWORKING -->
-  <div class="section" id="networking">
-    <div class="section-label">Prompts</div>
-    <h2>Networking</h2>
-
-    <div class="subsection">
-      <h3>Step 1 — Uncover connections</h3>
-      <p style="font-size:14px; color:var(--mid); font-weight:300; margin-bottom:20px;">Find out who you should be talking to. Goal: a list of at least 25 people to connect with.</p>
+    <!-- STEP 3 -->
+    <div class="step" id="step-3">
+      <div class="step-label">Step 3</div>
+      <h3>Clarify your ideal job target</h3>
+      <div class="step-goal">Goal: Identify 25 companies you're interested in, and 5 job titles you'd like to pursue</div>
+      <p class="step-intro">Use your work story to discover the job titles, industries, and companies that fit who you are.</p>
 
       <div class="prompt-block">
-        <div class="prompt-tag">Prompt — groups you belong to</div>
-        <div class="prompt-text">"Here are groups I'm part of. What types of people in these groups are most likely to be connected to [your target — e.g. hiring managers in healthcare, small business owners, HR professionals]?"</div>
-        <div class="prompt-note">Paste your list of groups — church, volunteer org, sports club, professional group, parent group, hobby group, etc.</div>
+        <div class="prompt-tag">Start here</div>
+        <div class="prompt-text">"Here's what I've done. Help me spot skills and strengths — look for patterns that show up across multiple roles, including unpaid and informal work."</div>
+        <div class="prompt-note">Paste or attach your employment narrative.</div>
+        <button class="copy-btn" onclick="copyPrompt(`Here's what I've done. Help me spot skills and strengths — look for patterns that show up across multiple roles, including unpaid and informal work.\n\n[Paste your employment narrative here]`, this)">Copy</button>
       </div>
 
       <div class="prompt-block followup">
         <div class="prompt-tag followup-tag">Follow-up</div>
-        <div class="prompt-text">"Which of these groups should I prioritize, and why?"</div>
+        <div class="prompt-text">"What are some job titles that fit my skills and strengths? Give me a list of 5–8 job titles with a one-sentence explanation of why each fits."</div>
+        <button class="copy-btn" onclick="copyPrompt(`What are some job titles that fit my skills and strengths? Give me a list of 5–8 job titles with a one-sentence explanation of why each fits.`, this)">Copy</button>
+      </div>
+
+      <div class="prompt-block followup">
+        <div class="prompt-tag followup-tag">Follow-up</div>
+        <div class="prompt-text">"Which industries need people with those job titles? List the top 5 industries, ranked by how many job openings typically exist."</div>
+        <button class="copy-btn" onclick="copyPrompt(`Which industries need people with those job titles? List the top 5 industries, ranked by how many job openings typically exist.`, this)">Copy</button>
+      </div>
+
+      <div class="prompt-block followup">
+        <div class="prompt-tag followup-tag">Follow-up</div>
+        <div class="prompt-text">"What types of companies hire people with those job titles? Give me 3–5 specific types of companies, with one example of a real company for each type."</div>
+        <button class="copy-btn" onclick="copyPrompt(`What types of companies hire people with those job titles? Give me 3–5 specific types of companies, with one example of a real company for each type.`, this)">Copy</button>
+      </div>
+
+      <div class="prompt-block followup">
+        <div class="prompt-tag followup-tag">Follow-up</div>
+        <div class="prompt-text">"Based on the job titles and industries we just identified, which of them are most likely to remain in demand as AI takes over more tasks? For each one, tell me specifically why — what does this role involve that AI handles poorly or not at all?"</div>
+        <button class="copy-btn" onclick="copyPrompt(`Based on the job titles and industries we just identified, which of them are most likely to remain in demand as AI takes over more tasks? For each one, tell me specifically why — what does this role involve that AI handles poorly or not at all?`, this)">Copy</button>
+      </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="step" id="step-4">
+      <div class="step-label">Step 4</div>
+      <h3>Update your job search library</h3>
+      <p class="step-intro">Now that you've identified companies and job titles to pursue, add two new knowledge blocks to your library.</p>
+
+      <ul class="kb-list">
+        <li>
+          <span class="kb-title">Target job profile</span>
+          <span class="kb-desc">A short document describing the job you're looking for: titles you'd accept, industries, company size, work environment preferences (remote/hybrid/in-person), commute limits, hours, salary floor. This makes job-fit prompts much more useful.</span>
+        </li>
+        <li>
+          <span class="kb-title">Questions and concerns</span>
+          <span class="kb-desc">A running list of things you're anxious about or unsure how to handle: a gap in employment, the reason you left your last job, salary expectations. Having these written down lets you prompt AI specifically rather than dancing around them.</span>
+        </li>
+      </ul>
+
+      <p class="step-intro" style="margin-top: 8px;">Your research may also have reminded you of accomplishments or experience you originally forgot. Update your existing documents if so.</p>
+
+      <div class="prompt-block">
+        <div class="prompt-tag">Prompt — check your library</div>
+        <div class="prompt-text">"These are the knowledge blocks I've created to make it easier to use AI tools throughout my search. List any other documents I should create. For each one, tell me what to include and why it helps."</div>
+        <div class="prompt-note">Upload or paste your documents.</div>
+        <button class="copy-btn" onclick="copyPrompt(`These are the knowledge blocks I've created to make it easier to use AI tools throughout my search. List any other documents I should create. For each one, tell me what to include and why it helps.\n\n[Upload or paste your documents]`, this)">Copy</button>
       </div>
 
       <div class="prompt-block">
-        <div class="prompt-tag">Prompt — your work history</div>
-        <div class="prompt-text">"Here are companies I've worked at. What types of people from these workplaces are most likely to be connected to [your target]?"</div>
-        <div class="prompt-note">Paste your list of past employers or volunteer organizations. Former colleagues are often your warmest leads.</div>
+        <div class="prompt-tag">Prompt — build your base resume</div>
+        <div class="prompt-text">"Draft a comprehensive base resume I can customize for each application."</div>
+        <div class="prompt-note">Paste your paid and unpaid chronologies, accomplishments list, and target job profile.</div>
+        <button class="copy-btn" onclick="copyPrompt(`Draft a comprehensive base resume I can customize for each application.\n\n[Paste your chronologies, accomplishments list, and target job profile]`, this)">Copy</button>
       </div>
 
       <div class="prompt-block">
-        <div class="prompt-tag">Prompt — your existing contacts</div>
-        <div class="prompt-text">"Here are people in my network: [paste list of names and job titles]. Which of them are most likely to know about openings for someone with my background, and which are most likely to know someone who does? Keep your response brief — just a short list with a one-sentence reason for each."</div>
+        <div class="prompt-tag">Bonus exercise</div>
+        <div class="prompt-text">"Here is my current LinkedIn profile. Suggest revisions to make my profile more optimal for my target job."</div>
+        <div class="prompt-note">Upload your LinkedIn profile as a PDF and your target job profile.</div>
+        <button class="copy-btn" onclick="copyPrompt(`Here is my current LinkedIn profile. Suggest revisions to make my profile more optimal for my target job.\n\n[Upload your LinkedIn profile PDF and target job profile]`, this)">Copy</button>
+      </div>
+    </div>
+
+    <!-- STEP 5 -->
+    <div class="step" id="step-5">
+      <div class="step-label">Step 5</div>
+      <h3>Find, understand, and respond to job listings</h3>
+
+      <div class="subsection">
+        <h4>Finding jobs</h4>
+        <div class="prompt-block">
+          <div class="prompt-tag">Prompt</div>
+          <div class="prompt-text">"What are some keywords I should search for if I am looking for work as a [your ideal job description]? Give me 10–15 keywords or job title variations, grouped by: exact titles, related titles, and industry terms that show up in listings."</div>
+          <button class="copy-btn" onclick="copyPrompt(`What are some keywords I should search for if I am looking for work as a [your ideal job description]? Give me 10–15 keywords or job title variations, grouped by: exact titles, related titles, and industry terms that show up in listings.`, this)">Copy</button>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h4>Understanding a listing</h4>
+        <div class="prompt-block">
+          <div class="prompt-tag">Prompt</div>
+          <div class="prompt-text">"Here's a job listing — can you explain what this role actually does? Give me a plain-English summary in 3–5 sentences, then a short list of the 3 things this job will mostly involve day-to-day."</div>
+          <div class="prompt-note">Paste the full job listing.</div>
+          <button class="copy-btn" onclick="copyPrompt(`Here's a job listing — can you explain what this role actually does? Give me a plain-English summary in 3–5 sentences, then a short list of the 3 things this job will mostly involve day-to-day.\n\n[Paste the full job listing]`, this)">Copy</button>
+        </div>
+
+        <div class="prompt-block">
+          <div class="prompt-tag">Prompt</div>
+          <div class="prompt-text">"Does this job sound like a good fit for someone with my background? Be direct. Tell me the 2–3 strongest matches and the 1–2 biggest gaps I'd need to address."</div>
+          <div class="prompt-note">Paste the job listing and your resume.</div>
+          <button class="copy-btn" onclick="copyPrompt(`Does this job sound like a good fit for someone with my background? Be direct. Tell me the 2–3 strongest matches and the 1–2 biggest gaps I'd need to address.\n\n[Paste the job listing and your resume]`, this)">Copy</button>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h4>Tailoring your resume</h4>
+        <div class="prompt-block">
+          <div class="prompt-tag">Prompt</div>
+          <div class="prompt-text">"Here's the job I'm applying for and my resume draft. Can you help make it a better match?"</div>
+          <div class="prompt-note">Paste the job listing and your resume.</div>
+          <button class="copy-btn" onclick="copyPrompt(`Here's the job I'm applying for and my resume draft. Can you help make it a better match?\n\n[Paste the job listing and your resume]`, this)">Copy</button>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h4>Writing a cover letter</h4>
+        <div class="prompt-block">
+          <div class="prompt-tag">Prompt</div>
+          <div class="prompt-text">"Here's the job I'm applying for and my resume. I've also attached the hiring manager's LinkedIn profile. Draft a cover letter that leads with the business problem this role is probably solving, and positions me as someone who can solve it. Don't open with 'I am writing to apply' or list my credentials in the first paragraph."</div>
+          <div class="prompt-note">Paste the job listing and your resume. Attach the hiring manager's LinkedIn profile as a PDF if you can find it.</div>
+          <button class="copy-btn" onclick="copyPrompt(`Here's the job I'm applying for and my resume. I've also attached the hiring manager's LinkedIn profile. Draft a cover letter that leads with the business problem this role is probably solving, and positions me as someone who can solve it. Don't open with "I am writing to apply" or list my credentials in the first paragraph.\n\n[Paste job listing, resume, and hiring manager LinkedIn PDF]`, this)">Copy</button>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h4>Reaching out directly</h4>
+        <div class="prompt-block">
+          <div class="prompt-tag">Prompt</div>
+          <div class="prompt-text">"I am sending a cold email to the hiring manager for this job. Draft a professional but friendly email message. Keep it under 150 words. Lead with one specific reason I'm reaching out to them in particular."</div>
+          <div class="prompt-note">Paste the job listing, your resume, your cover letter, and the hiring manager's LinkedIn profile.</div>
+          <button class="copy-btn" onclick="copyPrompt(`I am sending a cold email to the hiring manager for this job. Draft a professional but friendly email message. Keep it under 150 words. Lead with one specific reason I'm reaching out to them in particular.\n\n[Paste job listing, resume, cover letter, and hiring manager LinkedIn profile]`, this)">Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 6 -->
+    <div class="step" id="step-6">
+      <div class="step-label">Step 6</div>
+      <h3>Prepare for interviews</h3>
+
+      <div class="prompt-block">
+        <div class="prompt-tag">Prompt</div>
+        <div class="prompt-text">"I got an interview for this job! I'm really nervous. Can you write some interview questions so I can practice? Focus on questions specific to this role and company, not generic interview questions I could find anywhere. Include at least two behavioral questions based on the job requirements."</div>
+        <div class="prompt-note">Paste the job listing, your resume, your cover letter, the hiring manager's LinkedIn profile, and any messages you've exchanged.</div>
+        <button class="copy-btn" onclick="copyPrompt(`I got an interview for this job! I'm really nervous. Can you write some interview questions so I can practice? Focus on questions specific to this role and company, not generic interview questions I could find anywhere. Include at least two behavioral questions based on the job requirements.\n\n[Paste job listing, resume, cover letter, hiring manager LinkedIn profile, and any messages exchanged]`, this)">Copy</button>
+      </div>
+    </div>
+
+    <!-- BONUS EXERCISES -->
+    <div class="step" id="bonus" style="border-bottom:none;">
+      <div class="step-label">Bonus Exercises</div>
+      <h3>When the job search is getting tough</h3>
+      <p class="step-intro">A job search is often emotionally exhausting. Sometimes, you need a boost or a fresh perspective. Here are prompts for those moments.</p>
+
+      <div class="bonus-box">
+        <div class="bonus-label">When you need a boost</div>
+        <h4>Diagnose what's not working</h4>
+        <div class="prompt-block">
+          <div class="prompt-tag">Prompt</div>
+          <div class="prompt-text">"I've applied to 15 jobs and haven't heard back. Can you help me figure out what's not working in my job search strategy? Be specific to what I've shared — don't give me generic job search advice."</div>
+          <div class="prompt-note">Paste an ideal job listing, your base resume, and a brief explanation of your job search strategy so far.</div>
+          <button class="copy-btn" onclick="copyPrompt(`I've applied to 15 jobs and haven't heard back. Can you help me figure out what's not working in my job search strategy? Be specific to what I've shared — don't give me generic job search advice.\n\n[Paste an ideal job listing, your resume, and a brief explanation of your job search strategy]`, this)">Copy</button>
+        </div>
+      </div>
+
+      <div class="bonus-box">
+        <div class="bonus-label">Before a coaching appointment</div>
+        <h4>Prepare for your DFSO career coach</h4>
+        <div class="prompt-block">
+          <div class="prompt-tag">Prompt</div>
+          <div class="prompt-text">"I've got an appointment to meet with a DFSO career coach. How should I prepare to make the best use of this time?"</div>
+          <div class="prompt-note">Paste an ideal job listing, your resume, and a brief explanation of your job search strategy.</div>
+          <button class="copy-btn" onclick="copyPrompt(`I've got an appointment to meet with a DFSO career coach. How should I prepare to make the best use of this time?\n\n[Paste an ideal job listing, your resume, and a brief explanation of your job search strategy]`, this)">Copy</button>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top: 8px;">
+        <strong>Need more support?</strong>
+        DFSO career coaches are here to help. Contact Han-Bee at <a href="mailto:Han-BeeK@dressforsuccessoregon.org" style="color:var(--coral);">Han-BeeK@dressforsuccessoregon.org</a> to schedule a coaching appointment.
+      </div>
+    </div>
+
+  </div><!-- end .main -->
+</div><!-- end AI for Job Search section -->
+
+
+<!-- ══════════════════════════════════════════
+     H2: AI FOR NETWORKING
+══════════════════════════════════════════ -->
+<div class="workshop-section">
+  <div class="workshop-section-header">
+    <div class="inner">
+      <h2>AI for Networking</h2>
+      <p>Use AI to understand your network, stay visible, and reach out with confidence.</p>
+    </div>
+  </div>
+
+  <div class="main">
+
+    <!-- UNCOVER CONNECTIONS -->
+    <div class="step" id="uncover">
+      <div class="step-label">Uncover connections</div>
+      <h3>Find who you should be talking to</h3>
+      <div class="step-goal">Goal: A list of at least 25 people to connect with</div>
+
+      <div class="subsection">
+        <h4>Start with groups you belong to</h4>
+        <div class="prompt-block">
+          <div class="prompt-tag">Prompt</div>
+          <div class="prompt-text">"Here are groups I'm part of. What types of people in these groups are most likely to be connected to [your target — e.g. hiring managers in healthcare, small business owners, HR professionals]?"</div>
+          <div class="prompt-note">Paste your list of groups — church, volunteer org, sports club, professional group, parent group, hobby group, etc.</div>
+          <button class="copy-btn" onclick="copyPrompt(`Here are groups I'm part of. What types of people in these groups are most likely to be connected to [your target]?\n\n[Paste your list of groups]`, this)">Copy</button>
+        </div>
+
+        <div class="prompt-block followup">
+          <div class="prompt-tag followup-tag">Follow-up</div>
+          <div class="prompt-text">"Which of these groups should I prioritize, and why?"</div>
+          <button class="copy-btn" onclick="copyPrompt(`Which of these groups should I prioritize, and why?`, this)">Copy</button>
+        </div>
+
+        <div class="prompt-block">
+          <div class="prompt-tag">Prompt — using your work history</div>
+          <div class="prompt-text">"Here are companies I've worked at. What types of people from these workplaces are most likely to be connected to [your target]?"</div>
+          <div class="prompt-note">Paste your list of past employers or volunteer organizations. Former colleagues are often your warmest leads.</div>
+          <button class="copy-btn" onclick="copyPrompt(`Here are companies I've worked at. What types of people from these workplaces are most likely to be connected to [your target]?\n\n[Paste your list of companies or employers]`, this)">Copy</button>
+        </div>
+
+        <div class="prompt-block">
+          <div class="prompt-tag">Prompt — using your existing contacts</div>
+          <div class="prompt-text">"Here are people in my network: [paste list of names and job titles]. Which of them are most likely to know about openings for someone with my background, and which are most likely to know someone who does? Keep your response brief — just a short list with a one-sentence reason for each."</div>
+          <button class="copy-btn" onclick="copyPrompt(`Here are people in my network: [paste list of names and job titles]. Which of them are most likely to know about openings for someone with my background, and which are most likely to know someone who does? Keep your response brief — just a short list with a one-sentence reason for each.`, this)">Copy</button>
+        </div>
       </div>
 
       <div class="callout">
@@ -615,9 +837,11 @@
       </div>
     </div>
 
-    <div class="subsection">
-      <h3>Step 2 — Feed curation</h3>
-      <p style="font-size:14px; color:var(--mid); font-weight:300; margin-bottom:20px;">Turn your LinkedIn feed into a focused professional tool. Goal: 25–49 people you're actively paying attention to.</p>
+    <!-- FEED CURATION -->
+    <div class="step" id="feed">
+      <div class="step-label">Feed curation</div>
+      <h3>Turn LinkedIn into a focused tool</h3>
+      <div class="step-goal">Goal: 25–49 people you're actively paying attention to</div>
 
       <div class="callout">
         <strong>Remember: unfollowing is not disconnecting.</strong>
@@ -628,29 +852,38 @@
         <div class="prompt-tag">Prompt — find who to unfollow</div>
         <div class="prompt-text">"Here are recent posts from my LinkedIn feed. Based on the content, are there any posters I should unfollow to keep my feed focused on [your industry / target companies / job function]?"</div>
         <div class="prompt-note">Paste ~20 posts copied from your LinkedIn feed. Copy post text directly — no need to format it.</div>
+        <button class="copy-btn" onclick="copyPrompt(`Here are recent posts from my LinkedIn feed. Based on the content, are there any posters I should unfollow to keep my feed focused on [your industry / target companies / job function]?\n\n[Paste ~20 posts from your LinkedIn feed]`, this)">Copy</button>
       </div>
 
-      <div class="prompt-block">
-        <div class="prompt-tag">Prompt — advanced, if you have 200+ connections</div>
-        <div class="prompt-text">"These are my LinkedIn connections. What patterns do you see in terms of industries, seniority levels, and gaps that might be relevant to a job search in [field]?"</div>
-        <div class="prompt-note">Attach a .csv of your LinkedIn connections. To download: LinkedIn → Settings → Data Privacy → Get a copy of your data → Connections.</div>
-      </div>
+      <div class="subsection">
+        <h4>Advanced — if you have 200+ connections</h4>
+        <div class="prompt-block">
+          <div class="prompt-tag">Prompt — upload your LinkedIn CSV</div>
+          <div class="prompt-text">"These are my LinkedIn connections. What patterns do you see in terms of industries, seniority levels, and gaps that might be relevant to a job search in [field]?"</div>
+          <div class="prompt-note">Attach a .csv of your LinkedIn connections. To download: LinkedIn → Settings → Data Privacy → Get a copy of your data → Connections.</div>
+          <button class="copy-btn" onclick="copyPrompt(`These are my LinkedIn connections. What patterns do you see in terms of industries, seniority levels, and gaps that might be relevant to a job search in [field]?\n\n[Attach your LinkedIn connections .csv]`, this)">Copy</button>
+        </div>
 
-      <div class="prompt-block followup">
-        <div class="prompt-tag followup-tag">Follow-up</div>
-        <div class="prompt-text">"I want to prioritize contacts located in [your region, e.g. the Portland Metro area] who work as [job title] in [industry]. Identify the contacts who do NOT fit these criteria."</div>
-        <div class="prompt-note">Use the output to unfollow low-priority contacts in bulk.</div>
+        <div class="prompt-block followup">
+          <div class="prompt-tag followup-tag">Follow-up</div>
+          <div class="prompt-text">"I want to prioritize contacts located in [your region, e.g. the Portland Metro area] who work as [job title] in [industry]. Identify the contacts who do NOT fit these criteria."</div>
+          <div class="prompt-note">Use the output to unfollow low-priority contacts in bulk.</div>
+          <button class="copy-btn" onclick="copyPrompt(`I want to prioritize contacts located in [your region] who work as [job title] in [industry]. Identify the contacts who do NOT fit these criteria.`, this)">Copy</button>
+        </div>
       </div>
     </div>
 
-    <div class="subsection">
-      <h3>Garden networking</h3>
-      <p style="font-size:14px; color:var(--mid); font-weight:300; margin-bottom:20px;">For when you're not urgently job searching. Do this consistently — daily, weekly, or monthly — to stay visible and build relationships over time.</p>
+    <!-- GARDEN NETWORKING -->
+    <div class="step" id="garden">
+      <div class="step-label">Garden networking</div>
+      <h3>Stay visible over time</h3>
+      <p class="step-intro">For when you're not urgently job searching. Do this consistently — daily, weekly, or monthly — to stay visible and build relationships over time.</p>
 
       <div class="prompt-block">
         <div class="prompt-tag">Prompt — find posts worth commenting on</div>
         <div class="prompt-text">"Of these posts, which ones would be worth commenting on if I want to stay visible to people in [my field / my target industry]? For each one, suggest an angle for a genuinely useful comment."</div>
         <div class="prompt-note">Paste ~20 posts from your LinkedIn feed. You can reuse the same posts you pasted for feed curation.</div>
+        <button class="copy-btn" onclick="copyPrompt(`Of these posts, which ones would be worth commenting on if I want to stay visible to people in [my field / my target industry]? For each one, suggest an angle for a genuinely useful comment.\n\n[Paste ~20 posts from your LinkedIn feed]`, this)">Copy</button>
       </div>
 
       <div class="callout">
@@ -662,61 +895,72 @@
         <div class="prompt-tag">Prompt — draft a comment</div>
         <div class="prompt-text">"Here's a LinkedIn post from [a hiring manager at a company I'd like to work for / a contact I want to stay connected with]. I want to leave a comment that adds value and sounds like me — not generic, not sycophantic. Here's a little about my background: [paste 2–3 sentences about yourself]. Draft two or three options."</div>
         <div class="prompt-note">Always edit before posting. The goal is for it to sound like you — because in the final version, it is you.</div>
+        <button class="copy-btn" onclick="copyPrompt(`Here's a LinkedIn post from [a hiring manager at a company I'd like to work for / a contact I want to stay connected with]. I want to leave a comment that adds value and sounds like me — not generic, not sycophantic. Here's a little about my background: [paste 2–3 sentences]. Draft two or three options.\n\n[Paste the LinkedIn post]`, this)">Copy</button>
       </div>
     </div>
 
-    <div class="subsection">
-      <h3>Hunter networking</h3>
-      <p style="font-size:14px; color:var(--mid); font-weight:300; margin-bottom:20px;">For when you need a job now. Do this every weekday during a dedicated time block — focused, direct outreach to specific people.</p>
+    <!-- HUNTER NETWORKING -->
+    <div class="step" id="hunter">
+      <div class="step-label">Hunter networking</div>
+      <h3>Direct outreach when you need a job now</h3>
+      <p class="step-intro">Do this every weekday during a dedicated time block — focused, direct outreach to specific people.</p>
 
-      <div class="prompt-block">
-        <div class="prompt-tag">Prompt — find who to reach out to</div>
-        <div class="prompt-text">"I am seeking work as a [job title] in [industry/location]. Based on my background, who are the types of people most likely to either refer me directly to a job opening or connect me with someone who can?"</div>
-        <div class="prompt-note">Paste 3–4 sentences describing your most relevant experience, your strongest skills, and the type of work environment you do best in.</div>
+      <div class="subsection">
+        <h4>Find who to reach out to</h4>
+        <div class="prompt-block">
+          <div class="prompt-tag">Prompt</div>
+          <div class="prompt-text">"I am seeking work as a [job title] in [industry/location]. Based on my background, who are the types of people most likely to either refer me directly to a job opening or connect me with someone who can?"</div>
+          <div class="prompt-note">Paste 3–4 sentences describing your most relevant experience, your strongest skills, and the type of work environment you do best in.</div>
+          <button class="copy-btn" onclick="copyPrompt(`I am seeking work as a [job title] in [industry/location]. Based on my background, who are the types of people most likely to either refer me directly to a job opening or connect me with someone who can?\n\n[Paste 3–4 sentences about your background]`, this)">Copy</button>
+        </div>
+
+        <div class="prompt-block">
+          <div class="prompt-tag">Prompt — research a contact before reaching out</div>
+          <div class="prompt-text">"Here is the LinkedIn profile of someone I want to reach out to. What do we have in common, and what's the most genuine connection point I could reference in a message?"</div>
+          <div class="prompt-note">Paste their LinkedIn profile text.</div>
+          <button class="copy-btn" onclick="copyPrompt(`Here is the LinkedIn profile of someone I want to reach out to. What do we have in common, and what's the most genuine connection point I could reference in a message?\n\n[Paste their LinkedIn profile text]`, this)">Copy</button>
+        </div>
+
+        <div class="prompt-block">
+          <div class="prompt-tag">Prompt — reconnecting after a gap</div>
+          <div class="prompt-text">"Here is what I know about [name]: [paste what you know]. I want to reconnect after [timeframe, e.g. two years]. What's a natural, non-transactional reason to reach out right now?"</div>
+          <div class="prompt-note">Natural reconnection feels like interest in them — not a request.</div>
+          <button class="copy-btn" onclick="copyPrompt(`Here is what I know about [name]: [paste what you know about them]. I want to reconnect after [timeframe]. What's a natural, non-transactional reason to reach out right now?`, this)">Copy</button>
+        </div>
       </div>
 
-      <div class="prompt-block">
-        <div class="prompt-tag">Prompt — research a contact before reaching out</div>
-        <div class="prompt-text">"Here is the LinkedIn profile of someone I want to reach out to. What do we have in common, and what's the most genuine connection point I could reference in a message?"</div>
-        <div class="prompt-note">Paste their LinkedIn profile text.</div>
+      <div class="subsection">
+        <h4>Writing outreach messages</h4>
+        <div class="prompt-block">
+          <div class="prompt-tag">Prompt — LinkedIn DM</div>
+          <div class="prompt-text">"I want to send a LinkedIn DM to [name/job title] asking if they know of any openings for someone with my background. I don't want it to sound desperate or transactional. Here's my background: [paste]. Draft two options — one warmer, one more direct."</div>
+          <div class="prompt-note">Pick the option that sounds most like you, then edit before sending.</div>
+          <button class="copy-btn" onclick="copyPrompt(`I want to send a LinkedIn DM to [name/job title] asking if they know of any openings for someone with my background. I don't want it to sound desperate or transactional. Here's my background: [paste]. Draft two options — one warmer, one more direct.`, this)">Copy</button>
+        </div>
+
+        <div class="prompt-block">
+          <div class="prompt-tag">Prompt — warm intro follow-up email</div>
+          <div class="prompt-text">"I've been referred to [name] by [mutual contact]. Draft a short email introducing myself and asking for a 20-minute call. Here's my background: [paste]. Here's what I know about them: [paste]."</div>
+          <div class="prompt-note">Mention the mutual contact in the first sentence — it's your best credibility signal.</div>
+          <button class="copy-btn" onclick="copyPrompt(`I've been referred to [name] by [mutual contact]. Draft a short email introducing myself and asking for a 20-minute call. Here's my background: [paste]. Here's what I know about them: [paste].`, this)">Copy</button>
+        </div>
+
+        <div class="prompt-block">
+          <div class="prompt-tag">Prompt — asking for a warm introduction</div>
+          <div class="prompt-text">"I want to ask [name] to introduce me to [target contact]. We know each other from [context]. Draft a short, easy-to-forward message that makes it simple for them to say yes."</div>
+          <div class="prompt-note">Make it easy — include a one-sentence description of yourself they can use in the intro.</div>
+          <button class="copy-btn" onclick="copyPrompt(`I want to ask [name] to introduce me to [target contact]. We know each other from [context]. Draft a short, easy-to-forward message that makes it simple for them to say yes.`, this)">Copy</button>
+        </div>
       </div>
 
-      <div class="prompt-block">
-        <div class="prompt-tag">Prompt — reconnecting after a gap</div>
-        <div class="prompt-text">"Here is what I know about [name]: [paste what you know]. I want to reconnect after [timeframe, e.g. two years]. What's a natural, non-transactional reason to reach out right now?"</div>
-        <div class="prompt-note">Natural reconnection feels like interest in them — not a request.</div>
-      </div>
-    </div>
-
-    <div class="subsection">
-      <h3>Writing outreach messages</h3>
-
-      <div class="prompt-block">
-        <div class="prompt-tag">Prompt — LinkedIn DM</div>
-        <div class="prompt-text">"I want to send a LinkedIn DM to [name/job title] asking if they know of any openings for someone with my background. I don't want it to sound desperate or transactional. Here's my background: [paste]. Draft two options — one warmer, one more direct."</div>
-        <div class="prompt-note">Pick the option that sounds most like you, then edit before sending.</div>
-      </div>
-
-      <div class="prompt-block">
-        <div class="prompt-tag">Prompt — warm intro follow-up email</div>
-        <div class="prompt-text">"I've been referred to [name] by [mutual contact]. Draft a short email introducing myself and asking for a 20-minute call. Here's my background: [paste]. Here's what I know about them: [paste]."</div>
-        <div class="prompt-note">Mention the mutual contact in the first sentence — it's your best credibility signal.</div>
-      </div>
-
-      <div class="prompt-block">
-        <div class="prompt-tag">Prompt — asking for a warm introduction</div>
-        <div class="prompt-text">"I want to ask [name] to introduce me to [target contact]. We know each other from [context]. Draft a short, easy-to-forward message that makes it simple for them to say yes."</div>
-        <div class="prompt-note">Make it easy — include a one-sentence description of yourself they can use in the intro.</div>
-      </div>
-    </div>
-
-    <div class="subsection">
-      <h3>When outreach isn't working</h3>
-
-      <div class="prompt-block">
-        <div class="prompt-tag">Prompt</div>
-        <div class="prompt-text">"I've reached out to [number] people in the past [timeframe] and haven't heard back. Here's an example of a message I've been sending: [paste]. Give me your rewrite first, then a brief explanation of what you changed and why."</div>
-        <div class="prompt-note">Not hearing back is feedback. Use AI to diagnose before sending more.</div>
+      <div class="subsection">
+        <h4>When outreach isn't working</h4>
+        <div class="prompt-block">
+          <div class="prompt-tag">Prompt</div>
+          <div class="prompt-text">"I've reached out to [number] people in the past [timeframe] and haven't heard back. Here's an example of a message I've been sending: [paste]. Give me your rewrite first, then a brief explanation of what you changed and why."</div>
+          <div class="prompt-note">Not hearing back is feedback. Use AI to diagnose before sending more.</div>
+          <button class="copy-btn" onclick="copyPrompt(`I've reached out to [number] people in the past [timeframe] and haven't heard back. Here's an example of a message I've been sending: [paste]. Give me your rewrite first, then a brief explanation of what you changed and why.`, this)">Copy</button>
+        </div>
       </div>
 
       <div class="callout">
@@ -724,34 +968,14 @@
         The more specific you are, the more useful the output. Before any networking prompt, include: your background, your target, and your relationship to the person you're reaching out to.
       </div>
     </div>
-  </div>
 
-  <!-- WHEN IT'S TOUGH -->
-  <div class="section" id="tough">
-    <div class="section-label">Prompts</div>
-    <h2>When the job search is getting tough</h2>
+  </div><!-- end .main -->
+</div><!-- end AI for Networking section -->
 
-    <div class="prompt-block">
-      <div class="prompt-tag">Prompt</div>
-      <div class="prompt-text">"I've applied to 15 jobs and haven't heard back. Can you help me figure out what's not working in my job search strategy? Be specific to what I've shared — don't give me generic job search advice."</div>
-      <div class="prompt-note">Paste an ideal job listing, your resume, and a brief explanation of your job search strategy so far.</div>
-    </div>
 
-    <div class="prompt-block">
-      <div class="prompt-tag">Prompt</div>
-      <div class="prompt-text">"I've got an appointment to meet with a DFSO career coach. How should I prepare to make the best use of this time?"</div>
-      <div class="prompt-note">Paste an ideal job listing, your resume, and a brief explanation of your job search strategy.</div>
-    </div>
-
-    <div class="callout">
-      <strong>Need more support?</strong>
-      DFSO career coaches are here to help. Contact Han-Bee at <a href="mailto:Han-BeeK@dressforsuccessoregon.org" style="color:var(--coral);">Han-BeeK@dressforsuccessoregon.org</a> to schedule a coaching appointment.
-    </div>
-  </div>
-
-</div>
-
-<!-- ABOUT BAND -->
+<!-- ══════════════════════════════════════════
+     ABOUT
+══════════════════════════════════════════ -->
 <div class="about-band">
   <div class="inner">
     <div class="label">About this guide</div>
@@ -762,8 +986,34 @@
 </div>
 
 <footer>
-  <p>DFS Oregon &nbsp;·&nbsp; <a href="https://oregon.dressforsuccess.org" target="_blank">dressforsuccessoregon.org</a> &nbsp;·&nbsp; Guide by <a href="https://eliejacobsen.com" target="_blank">Elie Jacobsen</a></p>
+  <p>DFS Oregon &nbsp;·&nbsp; <a href="https://dressforsuccessoregon.org" target="_blank">dressforsuccessoregon.org</a> &nbsp;·&nbsp; Guide by <a href="https://eliejacobsen.com" target="_blank">Elie Jacobsen</a></p>
 </footer>
+
+<script>
+function copyPrompt(text, btn) {
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = 'Copy';
+      btn.classList.remove('copied');
+    }, 2000);
+  }).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = 'Copy';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+</script>
 
 </body>
 </html>
